@@ -1,7 +1,6 @@
 /*EDD 
   LUIS ALFREDO LOCON PEÑA
   */
-
 #include <stdio.h>
 #include <stdlib.h>
 
