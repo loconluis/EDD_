@@ -11,21 +11,33 @@ typedef struct Elemento{
 }Elemento;
 
 Elemento *primero;
+Elemento *ultimo;
 
-int aux;
-Elemento *cola();
-void push(int dato);
-int pop(void);
-void printStack(Elemento *);
-void verPrimero();
+/*Metodo de agregar elemento a la cola*/
+void push(Elemento* _elemento){
+    _elemento->sig = NULL;
+    //Comprobar si la cola esta vacia
+    if(primer == NULL){
+        primero = _elemento;
+        ultimo = _elemento;
+    }else{
+        ultimo->sig = _elemento;
+        ultimo = _elemento;
+    }
+}
 
+/*Metodo de eliminar elemento a la cola*/
+Elemento* pop(){
+    if(primero == NULL){
+        return NULL;
+    }
+    
+    Elemento* aux = primero;
+    primero = primero->sig;
+    return aux;
+}
 
-/*Aparta la memoria de un nuevo elemento*/
-Elemento *cola(){
-  Elemento *e = (Elemento *)malloc(sizeof(Elemento));
-  if (e==NULL){
-    printf("Falta Memoria");
-    exit(0);
-  }
-  return e;
+int main(){
+
+    return 0;
 }
