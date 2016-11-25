@@ -42,6 +42,8 @@ int main(){
         default: puts("\n Saliendo...");
 
     return 0;
+        }
+    }
 }
 
 
@@ -59,11 +61,12 @@ Elemento *Cola(){
 void push(int dato){
     Elemento *e = Cola();
     e->sig = NULL;
+    e->dato = dato;
     //Comprobar si la cola esta vacia
     if(primero == NULL){
         primero = e;
         ultimo = e;
-    }else{
+    }else{        
         ultimo->sig = e;
         ultimo = e;
     }
@@ -101,7 +104,7 @@ void verCabeza(){
     int i;
     Elemento *cabeza;
     cabeza = primero;
-    while(f!=NULL){
+    while(cabeza!=NULL){
         i = cabeza->dato;
     }
     printf("La cabeza de la cola es: \n %d", i);
