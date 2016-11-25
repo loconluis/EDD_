@@ -15,7 +15,31 @@ typedef struct Elemento{
 Elemento *primero;
 Elemento *ultimo;
 
+Elemento *Cola();
+void push(int dato);
+int pop(void);
+void printQueu(Elemento *);
+void verCabeza();
+
 int main(){
+    char m;
+    int k;
+    puts("Elige que tipo de accion quieres realizar: (Utiliza letra mayuscula)");
+    while (1) {
+        printf("[A] Agregar Elemento \n");
+        printf("[B] Eliminar Elemento \n");
+        printf("[C] Ver Primer Elemento \n");
+        printf("[D] Imprimir Cola \n");
+        printf("[E] Salir \n");
+        m=getchar();
+        getchar();
+        switch (m) {
+        case 'A': printf("Ingresa un numero: "); scanf("%d", &k); getchar(); push(k); break;
+        case 'B': pop(); printf("se elimino el primero en ingresar\n"); break;
+        case 'C': verCabeza(); break;
+        case 'D': printQueu(primero); break;
+        case 'E': exit(0);
+        default: puts("\n Saliendo...");
 
     return 0;
 }
